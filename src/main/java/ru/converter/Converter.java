@@ -1,21 +1,23 @@
 package ru.converter;
 
 public class Converter {
-    public static float rubleToDollar(float value) {
-        float rsl = value / 90;
-        return rsl;
+    public static double rubleToDollar(double value) {
+        return value / 90;
     }
-    public static float rubleToEuro(float value) {
-        float rsl = value / 100;
-        return rsl;
+    public static double rubleToEuro(double value) {
+        return value / 100;
     }
 
     public static void main(String[] args) {
-        int rubForDollar = 140;
-        int rubForEuro = 140;
-        float dollar = rubleToDollar(rubForDollar);
-        System.out.println(rubForDollar + " rubles are " + dollar + " dollar.");
-        float euro = rubleToEuro(rubForEuro);
-        System.out.println(rubForEuro + " rubles are " + euro + " euro.");
+        double inRubForDollar = 180;
+        double expRubForDollar = 2;
+        double outRubForDollar= rubleToDollar(inRubForDollar);
+        double inRubForEuro = 140;
+        double expRubForEuro = 1.4;
+        double outRubForEuro = rubleToEuro(inRubForEuro);
+        boolean passedRubForDollar = expRubForDollar == outRubForDollar;
+        boolean passedRubForEuro = expRubForEuro == outRubForEuro;
+        System.out.println("180 rubles are 2. Test result : " + passedRubForDollar);
+        System.out.println("140 rubles are 1.4. Test result : " + passedRubForEuro);
     }
 }
